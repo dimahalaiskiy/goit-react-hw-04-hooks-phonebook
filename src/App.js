@@ -60,12 +60,7 @@ const App = () => {
 			</Title>
 			<Title title='Contacts'></Title>
 			<FilterContactsInput setFilter={setFilteredContact} filteredValue={filter} />
-			<Contacts
-				contacts={contacts}
-				filteredContacts={filteredContacts()}
-				filter={filter}
-				deleteContact={deleteContact}
-			/>
+			<Contacts filteredContacts={filteredContacts()} deleteContact={deleteContact} />
 			<ToastContainer />
 		</Container>
 	);

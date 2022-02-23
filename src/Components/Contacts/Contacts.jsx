@@ -5,27 +5,18 @@ import PropTypes from 'prop-types';
 
 export default class Contacts extends Component {
 	render() {
-		const { contacts, deleteContact, filter, filteredContacts } = this.props;
+		const { deleteContact, filteredContacts } = this.props;
 
 		return (
 			<ContactList>
-				{filter
-					? filteredContacts.map((contact) => {
-							return (
-								<ListItem key={contact.id}>
-									{contact.name}: {contact.number}
-									<Button onClick={() => deleteContact(contact)}>Delete</Button>
-								</ListItem>
-							);
-					  })
-					: contacts.map((contact) => {
-							return (
-								<ListItem key={contact.id}>
-									{contact.name}: {contact.number}
-									<Button onClick={() => deleteContact(contact)}>Delete</Button>
-								</ListItem>
-							);
-					  })}
+				{filteredContacts.map((contact) => {
+					return (
+						<ListItem key={contact.id}>
+							{contact.name}: {contact.number}
+							<Button onClick={() => deleteContact(contact)}>Delete</Button>
+						</ListItem>
+					);
+				})}
 			</ContactList>
 		);
 	}
